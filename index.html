@@ -3,11 +3,12 @@
 <head>
     
   <title>Cell Phones</title>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"> </script>
   <link rel="stylesheet" type="text/css" href="css.css" />    
     
 </head>
 <body>
-    <div class="icon-bar">
+    <div class="icon-bar" v-on:click="counter+=1">
         <a class="active" href="index.html"><i><img 
             src="./img/home.svg" 
             alt="Home"
@@ -26,8 +27,11 @@
             /></i></a>
         <a href="reference.html"><i><img 
             src="./img/server.svg" 
-            alt="sever"
+            alt="server"
             /></i></a>
+        <a>{{counter}} bar clicks</a>
+            <script src="Vue.js"> </script>
+            
     </div>
 
     <div id="title">
@@ -58,4 +62,12 @@
 
 
 </body>
+<script>
+  var app = new Vue({
+    el: '.icon-bar',
+    data: {
+      counter: 0, 
+    }
+  })
+</script>
 </html>
